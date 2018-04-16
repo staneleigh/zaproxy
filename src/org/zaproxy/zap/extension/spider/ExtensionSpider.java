@@ -336,10 +336,6 @@ public class ExtensionSpider extends ExtensionAdaptor implements SessionChangedL
 
 	@Override
 	public void sessionModeChanged(Mode mode) {
-		if (Mode.safe.equals(mode)) {
-			this.scanController.stopAllScans();
-		}
-
 		if (View.isInitialised()) {
 			this.getSpiderPanel().sessionModeChanged(mode);
 			getMenuItemCustomScan().setEnabled( ! Mode.safe.equals(mode));
